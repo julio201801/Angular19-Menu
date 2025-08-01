@@ -43,17 +43,7 @@ export class AnalyticsComponent<T> implements OnInit{
   //displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   //dataSource = ELEMENT_DATA;
   constructor() {
-    effect(() => {
-      if (this.valueToFilter()) {
-        this.dataSource.filter = this.valueToFilter();
-      } else {
-        this.dataSource.filter = '';
-      }
-
-      if (this.data()) {
-        this.dataSource.data = this.data();
-      }
-    }, {allowSignalWrites: true})
+   
    }
    ngOnInit(): void {
     this.dataSource.data = this.data();

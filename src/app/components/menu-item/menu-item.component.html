@@ -28,7 +28,7 @@ matListItemIcon>{{item().icon}}</mat-icon>
     <div>
         @for (subItem of item().subItems; track subItem.label){
             <a mat-list-item 
-            class="menu-item indented"
+            class="menu-item"
             [class.indented]="!collapsed()"
             [routerLink]="item().route + '/' + subItem.route"
             routerLinkActive="selected-menu-item"
