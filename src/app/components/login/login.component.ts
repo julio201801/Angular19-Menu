@@ -36,7 +36,8 @@ onSubmit() {
       this.userObj.usuario= this.loginForm.value.email;
       this.userObj.password= this.loginForm.value.password; 
       this.Http.post('http://localhost:5245/Usuario/Authentication', this.userObj).subscribe((res:any)=>{
-        localStorage.setItem('user', JSON.stringify(res.registro.usuario));
+        localStorage.setItem('user', res.registro.usuario);
+        localStorage.setItem('tocken', res.registro.token);
         this.router.navigateByUrl('dashboard');
       });  
       

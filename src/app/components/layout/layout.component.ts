@@ -23,6 +23,8 @@ export class LayoutComponent {
   router=inject(Router);
   logout() {
     localStorage.removeItem('user');
+    localStorage.removeItem('tocken');
+    
     this.router.navigateByUrl('login');
   }
 }

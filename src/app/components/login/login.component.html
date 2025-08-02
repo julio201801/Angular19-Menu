@@ -8,7 +8,7 @@
         <mat-icon matPrefix>mail</mat-icon>
       </mat-form-field>
 
-      <mat-form-field appearance="fill" class="full-width">
+      <mat-form-field appearance="outline" class="full-width">
         <mat-label>Contraseña</mat-label>
         <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" required  />
         <button mat-icon-button matSuffix (click)="hide = !hide" type="button">

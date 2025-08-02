@@ -1,14 +1,16 @@
 .login-container {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  align-items: center; /* ← centrado vertical */
+  height: 90vh; /* ← altura completa de la ventana */
+  padding: 20px; /* opcional, para evitar que el card pegue al borde */
 }
 
 
 mat-card {
   width: 400px;
   padding: 20px;
-  border: 2px solid #3f51b5; /* color azul Material */
+  border: 2px solid #a9adc5; /* color azul Material */
   border-radius: 8px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
 }
@@ -21,31 +23,5 @@ mat-card {
   text-align: center;
   margin-top: 10px;
 }
-mat-form-field.medium {
-  width: 280px;
-}
 
-input.mat-input-element {
-  font-size: 16px;
-  height: 40px;
-  padding: 8px 12px;
-}
-/* Aplica a todos los mat-form-field con apariencia outline */
-.mat-form-field-appearance-outline .mat-form-field-outline-start,
-.mat-form-field-appearance-outline .mat-form-field-outline-end,
-.mat-form-field-appearance-outline .mat-form-field-outline-gap {
-  border-width: 1px !important; /* Borde más fino */
-}
-
-/* Ajusta altura y padding del input */
-.mat-input-element {
-  height: 32px;
-  font-size: 14px;
-  padding: 4px 8px;
-}
-
-/* Opcional: reduce el espacio vertical del contenedor */
-.mat-form-field-wrapper {
-  padding-bottom: 0.5em;
-}
 
