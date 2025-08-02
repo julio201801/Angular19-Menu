@@ -1,5 +1,5 @@
-import { Component,computed,signal } from '@angular/core';
-import { RouterOutlet} from '@angular/router';
+import { Component,computed,inject,signal } from '@angular/core';
+import { Router, RouterOutlet} from '@angular/router';
 import {MatToolbarModule} from '@angular/material/toolbar'
 import {MatButtonModule} from '@angular/material/button'
 import {MatIconModule} from '@angular/material/icon'
@@ -20,4 +20,9 @@ export class LayoutComponent {
  title = 'demo2Angular';
   collapsed= signal(false);
   sidenavWidth= computed(() => this.collapsed() ? '65px' : '250px');
+  router=inject(Router);
+  logout() {
+    localStorage.removeItem('user');
+    this.router.navigateByUrl('login');
+  }
 }
