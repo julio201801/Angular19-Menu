@@ -1,36 +1,49 @@
 import { Routes } from '@angular/router';
-import {DashboardComponent} from '../app/pages/dashboard/dashboard.component'
 import {ContentComponent} from '../app/pages/content/content.component'
 import{AnalyticsComponent} from '../app/pages/analytics/analytics.component'
 import { VideosComponent } from './pages/content/videos/videos.component';
 import { PlaylistComponent } from './pages/content/playlist/playlist.component';
+import { LoginComponent } from './components/login/login.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 export const routes: Routes = [
     {
         path:'',
         pathMatch:'full',
-        redirectTo:'dashboard'
+        redirectTo:'login'
     },
     {
-        path:'dashboard',
-        component: DashboardComponent      
+        path:'login',
+        component: LoginComponent      
     },
     {
-        path:'content',
-        component: ContentComponent,
+        path:'layout',
+        component: LayoutComponent,
         children: [
             {
-                path:'videos',
-                component: VideosComponent 
+                path:'dashboard',
+                component: DashboardComponent
             },
             {
-                path:'playlist',
-                component: PlaylistComponent 
-            },
-        ]
+                    path:'content',
+                    component: ContentComponent,
+                    children: [
+                        {
+                            path:'videos',
+                            component: VideosComponent 
+                        },
+                        {
+                            path:'playlist',
+                            component: PlaylistComponent 
+                        },
+                    ]
 
-    },
-    {
-        path:'analytics',
-        component: AnalyticsComponent
+            },
+            {
+                path:'analytics',
+                component: AnalyticsComponent
+            }
+        ]
     }
+    
 ];

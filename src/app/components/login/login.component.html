@@ -1,24 +1,26 @@
-<div class="form-container mat-elevation-z5">
-    <h1>Login</h1>
-    <form [formGroup]="loginForm" (ngSubmit)="submit()">
-      <mat-form-field>
-        <input matInput placeholder="Email address" formControlName="email" />
-        <mat-error *ngIf="email?.errors?.['required']">
-          Email address is required
-        </mat-error>
-        <mat-error *ngIf="email?.errors?.['email']">
-          Please enter a valid email address
-        </mat-error>
+<div class="login-container">
+  <mat-card>
+    <h2>Iniciar sesión</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" required />
+        <mat-icon matPrefix>mail</mat-icon>
       </mat-form-field>
-      <mat-form-field>
-        <input matInput type="password" placeholder="Password" formControlName="password" />
-        <mat-error *ngIf="password?.errors?.['required']">
-          Password is required
-        </mat-error>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Contraseña</mat-label>
+        <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" required />
+        <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+          <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
       </mat-form-field>
-      <div class="center margin-top">
-          <button type="submit" mat-raised-button color="primary">Login</button>
-      </div>
-      <span class="center margin-top">New to our platform? <a class="sign-up-link" routerLink="/sign-up">Sign up!</a></span>
+
+      <button mat-raised-button color="primary" class="full-width" type="submit">
+        Login
+      </button>
     </form>
-  </div>
+    <p class="signup-link">¿No tienes cuenta? <a routerLink="/register">Regístrate</a></p>
+  </mat-card>
+</div>
+

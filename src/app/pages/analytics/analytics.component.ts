@@ -1,4 +1,4 @@
-import { Component, effect, input, OnInit, signal, viewChild } from '@angular/core';
+import { Component,  input, OnInit, signal, viewChild } from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { MatIconModule} from '@angular/material/icon'
 import { MatSort } from '@angular/material/sort';

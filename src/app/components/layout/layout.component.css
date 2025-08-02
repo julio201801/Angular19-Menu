@@ -1,0 +1,28 @@
+.content {
+ padding: 24px;
+ border: 0;
+ background-color:slategray;
+}
+mat-toolbar {
+    position: relative;
+    z-index: 5;
+    
+}
+mat-sidenav-container{
+    height: calc(100vh - 64px);
+    border: 0;
+}
+mat-sidenav, mat-sidenav-content{
+    transition: all 500ms ease-in-out;
+}
+.spacer {
+    flex: 1 1 auto;
+  }
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Alinea el contenido al final, es decir, a la derecha */
+    padding: 16px; /* Espacio opcional alrededor del contenedor */
+    position: relative;
+    flex: auto;
+  }
+  
